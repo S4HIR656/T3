@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace T3
 {
     public partial class Form1 : Form
     {
+        ArbolProducto arbol = new ArbolProducto();
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            Formularios.FormProductos objetoFormProducto=new Formularios.FormProductos();
+            objetoFormProducto.ShowDialog();
         }
     }
 }
