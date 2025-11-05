@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.Seleccionar = new System.Windows.Forms.Label();
-            this.dgvclientes = new System.Windows.Forms.DataGridView();
+            this.dgvproducto = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproducto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,17 +55,17 @@
             this.Seleccionar.TabIndex = 5;
             this.Seleccionar.Text = "Seleccionar Registro para Modificar o Eliminar";
             // 
-            // dgvclientes
+            // dgvproducto
             // 
-            this.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvclientes.Location = new System.Drawing.Point(326, 34);
-            this.dgvclientes.Name = "dgvclientes";
-            this.dgvclientes.Size = new System.Drawing.Size(462, 398);
-            this.dgvclientes.TabIndex = 4;
+            this.dgvproducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvproducto.Location = new System.Drawing.Point(326, 34);
+            this.dgvproducto.Name = "dgvproducto";
+            this.dgvproducto.Size = new System.Drawing.Size(462, 398);
+            this.dgvproducto.TabIndex = 4;
+            this.dgvproducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproducto_CellClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
@@ -84,38 +83,31 @@
             this.groupBox1.Size = new System.Drawing.Size(299, 403);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Cliente";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(32, 315);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(207, 41);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Limpiar Campos";
-            this.button4.UseVisualStyleBackColor = true;
+            this.groupBox1.Text = "Datos Producto";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(32, 271);
+            this.button3.Location = new System.Drawing.Point(32, 295);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(207, 38);
             this.button3.TabIndex = 10;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(32, 229);
+            this.button2.Location = new System.Drawing.Point(32, 253);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(207, 36);
             this.button2.TabIndex = 9;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(32, 185);
+            this.button1.Location = new System.Drawing.Point(32, 209);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(207, 38);
             this.button1.TabIndex = 8;
@@ -125,7 +117,7 @@
             // 
             // txtstock
             // 
-            this.txtstock.Location = new System.Drawing.Point(139, 135);
+            this.txtstock.Location = new System.Drawing.Point(139, 142);
             this.txtstock.Name = "txtstock";
             this.txtstock.Size = new System.Drawing.Size(100, 20);
             this.txtstock.TabIndex = 7;
@@ -154,7 +146,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 142);
+            this.label4.Location = new System.Drawing.Point(21, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 3;
@@ -163,7 +155,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 102);
+            this.label3.Location = new System.Drawing.Point(21, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 2;
@@ -193,11 +185,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Seleccionar);
-            this.Controls.Add(this.dgvclientes);
+            this.Controls.Add(this.dgvproducto);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormProductos";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).EndInit();
+            this.Load += new System.EventHandler(this.FormProductos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproducto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -208,9 +202,8 @@
         #endregion
 
         private System.Windows.Forms.Label Seleccionar;
-        private System.Windows.Forms.DataGridView dgvclientes;
+        private System.Windows.Forms.DataGridView dgvproducto;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
