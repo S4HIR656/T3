@@ -52,8 +52,41 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormBuscarComprobante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBuscarComprobante.Designer.cs">
+      <DependentUpon>FormBuscarComprobante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormClientes.Designer.cs">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormProductos.Designer.cs">
+      <DependentUpon>FormProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormReportePorfechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormReportePorfechas.Designer.cs">
+      <DependentUpon>FormReportePorfechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormVentas.Designer.cs">
+      <DependentUpon>FormVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
