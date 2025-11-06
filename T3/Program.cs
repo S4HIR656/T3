@@ -20,6 +20,5 @@ namespace T3
         }
 
 
-        //sdfsdkngpeodwafnhigfdafn gpñiendafg
-    }//ww
+    }
 }

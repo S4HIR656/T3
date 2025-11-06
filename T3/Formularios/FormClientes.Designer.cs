@@ -32,7 +32,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
             this.txttelefono = new System.Windows.Forms.TextBox();
             this.txtapellidos = new System.Windows.Forms.TextBox();
             this.txtnombre = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnguardar);
             this.groupBox1.Controls.Add(this.txttelefono);
             this.groupBox1.Controls.Add(this.txtapellidos);
             this.groupBox1.Controls.Add(this.txtnombre);
@@ -86,6 +86,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -95,16 +96,17 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnguardar
             // 
-            this.button1.Location = new System.Drawing.Point(32, 185);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 38);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnguardar.Location = new System.Drawing.Point(32, 185);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(207, 38);
+            this.btnguardar.TabIndex = 8;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // txttelefono
             // 
@@ -181,11 +183,13 @@
             // 
             // dgvclientes
             // 
+            this.dgvclientes.AllowUserToAddRows = false;
             this.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvclientes.Location = new System.Drawing.Point(317, 31);
             this.dgvclientes.Name = "dgvclientes";
             this.dgvclientes.Size = new System.Drawing.Size(471, 384);
             this.dgvclientes.TabIndex = 3;
+            this.dgvclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellClick);
             // 
             // FormClientes
             // 
@@ -196,7 +200,9 @@
             this.Controls.Add(this.Seleccionar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormClientes";
+            this.Load += new System.EventHandler(this.FormClientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).EndInit();
@@ -219,7 +225,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Label Seleccionar;
         private System.Windows.Forms.DataGridView dgvclientes;
     }

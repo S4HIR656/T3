@@ -80,7 +80,7 @@ namespace Clases.Clientes
             }
             else
             {
-                return Buscar(actual.izq, id);
+                return Buscar(actual.derecha, id);
             }
         }
 
@@ -93,7 +93,6 @@ namespace Clases.Clientes
         {
             if (nodo == null)
             {
-                MessageBox.Show("No se encontró el cliente con ese ID");
                 return null;
             }
 
@@ -125,7 +124,7 @@ namespace Clases.Clientes
                     nodo.dato = min.dato;
                     nodo.derecha = eliminart(nodo.derecha, min.dato.Id);
                 }
-                MessageBox.Show("Cliente eliminado correctamente");
+
             }
 
             return nodo;
@@ -136,7 +135,20 @@ namespace Clases.Clientes
             while (nodo.izq != null) nodo = nodo.izq;
             return nodo;
         }
-
+        public void Modificar(int id, string nuevoNombre, string nuevoTelefono)
+        {
+            NodoCliente nodo = Buscar(raiz, id);
+            if (nodo != null)
+            {
+                nodo.dato.Nombre = nuevoNombre;
+                nodo.dato.Telefono = nuevoTelefono;
+                MessageBox.Show("Nombre y/o telefono modificado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el cliente con ese ID");
+            }
+        } 
 
     }
 }
