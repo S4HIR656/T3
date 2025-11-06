@@ -11,7 +11,7 @@ namespace Clases.Clientes
         public cliente dato;
         public NodoCliente izq;
         public NodoCliente derecha;
-
+        //asdfvgbhjhgfd
         public NodoCliente(cliente cliente)
         {
             dato = cliente;
