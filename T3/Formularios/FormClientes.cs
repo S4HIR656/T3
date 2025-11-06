@@ -36,7 +36,6 @@ namespace T3.Formularios
         {
                 int id;
 
-                // Validar que el ID sea un número
                 if (!int.TryParse(txtid.Text, out id))
                 {
                     MessageBox.Show("El ID debe ser un número válido.");
@@ -49,10 +48,8 @@ namespace T3.Formularios
 
                 cliente nuevo = new cliente(id, nombre, apellidos, telefono);
 
-                // Insertar en el árbol (solo mostrará mensaje si existe ID)
                 arbol.Insertar(nuevo);
 
-                // Actualizar DataGridView
                 dgvclientes.Rows.Clear();
                 arbol.Llenar(arbol.raiz, dgvclientes);
 
@@ -64,6 +61,16 @@ namespace T3.Formularios
                 txttelefono.Clear();
                 txtid.Focus();
             }
-        
+        private void dgvproducto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvproducto.Rows[e.RowIndex];
+                txtid.Text = fila.Cells["Id"].Value.ToString();
+                txtnombreproducto.Text = fila.Cells["Nombre"].Value.ToString();
+                txtprecio.Text = fila.Cells["Precio"].Value.ToString();
+                txtstock.Text = fila.Cells["Stock"].Value.ToString();
+            }
+        }
     }
 }

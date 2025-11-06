@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    public class NodoCliente
+    public class NodoProducto
     {
         public Producto Dato;
-        public NodoCliente izq;
-        public NodoCliente derecha;
-        public NodoCliente(Producto producto)
+        public NodoProducto izq;
+        public NodoProducto derecha;
+        public NodoProducto(Producto producto)
         {
             Dato = producto;
             izq= null;

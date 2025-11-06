@@ -46,7 +46,7 @@
     <Compile Include="Clientes\cliente.cs" />
     <Compile Include="Clientes\NodoCliente.cs" />
     <Compile Include="Productos\ArbolProducto.cs" />
-    <Compile Include="Productos\NodoCliente.cs" />
+    <Compile Include="Productos\NodoProducto.cs" />
     <Compile Include="Productos\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

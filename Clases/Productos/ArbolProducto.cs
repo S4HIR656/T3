@@ -9,8 +9,8 @@ namespace Clases
 {
     public class ArbolProducto
     {
-        public NodoCliente raiz = null;
-        private void InsertarRec(NodoCliente actual, NodoCliente nuevo)
+        public NodoProducto raiz = null;
+        private void InsertarRec(NodoProducto actual, NodoProducto nuevo)
         {
             if (nuevo.Dato.Id < actual.Dato.Id)
             {
@@ -38,7 +38,7 @@ namespace Clases
         }
         public void Insertar(Producto producto)
         {
-            NodoCliente nuevo = new NodoCliente(producto);
+            NodoProducto nuevo = new NodoProducto(producto);
             if (raiz == null)
             {
                 raiz = nuevo;
@@ -48,7 +48,7 @@ namespace Clases
                 InsertarRec(raiz, nuevo);
             }
         }
-        public void Llenar(NodoCliente nodo, DataGridView dgv)
+        public void Llenar(NodoProducto nodo, DataGridView dgv)
         {
             if (nodo != null)
             {
@@ -59,7 +59,7 @@ namespace Clases
         }
         public void Modificar(int id, string nuevoNombre, double nuevoPrecio, int nuevoStock)
         {
-            NodoCliente nodo = Buscar(raiz, id);
+            NodoProducto nodo = Buscar(raiz, id);
             if (nodo != null)
             {
                 nodo.Dato.Nombre = nuevoNombre;
@@ -72,12 +72,12 @@ namespace Clases
                 MessageBox.Show("No se encontró el producto con ese ID");
             }
         }
-        public NodoCliente Buscando(int id)
+        public NodoProducto Buscando(int id)
         {
             return Buscar(raiz, id);
         }
 
-        private NodoCliente Buscar(NodoCliente actual, int id)
+        private NodoProducto Buscar(NodoProducto actual, int id)
         {
             if (actual == null)
             {
@@ -100,7 +100,7 @@ namespace Clases
         {
             raiz = eliminart(raiz, id);
         }
-        private NodoCliente eliminart(NodoCliente nodo, int id) 
+        private NodoProducto eliminart(NodoProducto nodo, int id) 
         {
             if (nodo == null)
             {
@@ -131,7 +131,7 @@ namespace Clases
                 }
                 else
                 {
-                    NodoCliente min = encontrarmin(nodo.derecha);
+                    NodoProducto min = encontrarmin(nodo.derecha);
                     nodo.Dato = min.Dato;
                     nodo.derecha = eliminart(nodo.derecha, min.Dato.Id);
                 }
@@ -139,7 +139,7 @@ namespace Clases
             }
             return nodo;
         }
-        public NodoCliente encontrarmin(NodoCliente nodo) 
+        public NodoProducto encontrarmin(NodoProducto nodo) 
         {
             while (nodo.izq != null)
                 nodo = nodo.izq;
