@@ -8,10 +8,11 @@ namespace Clases.Clientes
 {
     public class NodoCliente
     {
+        //aaaaaaaaaaaaaaaaaaaa
         public cliente dato;
         public NodoCliente izq;
         public NodoCliente derecha;
-
+       
         public NodoCliente(cliente cliente)
         {
             dato = cliente;
