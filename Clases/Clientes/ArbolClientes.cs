@@ -140,6 +140,7 @@ namespace Clases.Clientes
             NodoCliente nodo = Buscar(raiz, id);
             if (nodo != null)
             {
+
                 nodo.dato.Nombre = nuevoNombre;
                 nodo.dato.Telefono = nuevoTelefono;
                 MessageBox.Show("Nombre y/o telefono modificado correctamente");
