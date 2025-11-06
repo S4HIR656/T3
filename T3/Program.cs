@@ -18,5 +18,8 @@ namespace T3
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-    }
+
+
+        //sdfsdkngpeodwafnhigfdafn gpñiendafg
+    }//ww
 }
