@@ -33,16 +33,16 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtapmaterno = new System.Windows.Forms.TextBox();
-            this.txtappaterno = new System.Windows.Forms.TextBox();
+            this.txttelefono = new System.Windows.Forms.TextBox();
+            this.txtapellidos = new System.Windows.Forms.TextBox();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvclientes = new System.Windows.Forms.DataGridView();
             this.Seleccionar = new System.Windows.Forms.Label();
+            this.dgvclientes = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).BeginInit();
             this.SuspendLayout();
@@ -53,8 +53,8 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtapmaterno);
-            this.groupBox1.Controls.Add(this.txtappaterno);
+            this.groupBox1.Controls.Add(this.txttelefono);
+            this.groupBox1.Controls.Add(this.txtapellidos);
             this.groupBox1.Controls.Add(this.txtnombre);
             this.groupBox1.Controls.Add(this.txtid);
             this.groupBox1.Controls.Add(this.label4);
@@ -104,20 +104,21 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtapmaterno
+            // txttelefono
             // 
-            this.txtapmaterno.Location = new System.Drawing.Point(139, 135);
-            this.txtapmaterno.Name = "txtapmaterno";
-            this.txtapmaterno.Size = new System.Drawing.Size(100, 20);
-            this.txtapmaterno.TabIndex = 7;
+            this.txttelefono.Location = new System.Drawing.Point(139, 135);
+            this.txttelefono.Name = "txttelefono";
+            this.txttelefono.Size = new System.Drawing.Size(100, 20);
+            this.txttelefono.TabIndex = 7;
             // 
-            // txtappaterno
+            // txtapellidos
             // 
-            this.txtappaterno.Location = new System.Drawing.Point(139, 99);
-            this.txtappaterno.Name = "txtappaterno";
-            this.txtappaterno.Size = new System.Drawing.Size(100, 20);
-            this.txtappaterno.TabIndex = 6;
+            this.txtapellidos.Location = new System.Drawing.Point(139, 99);
+            this.txtapellidos.Name = "txtapellidos";
+            this.txtapellidos.Size = new System.Drawing.Size(100, 20);
+            this.txtapellidos.TabIndex = 6;
             // 
             // txtnombre
             // 
@@ -138,18 +139,18 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(21, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.Size = new System.Drawing.Size(96, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Apellido Materno: ";
+            this.label4.Text = "Número telefonico:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(21, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Apellido paterno:";
+            this.label3.Text = "Apellidos:";
             // 
             // label2
             // 
@@ -165,17 +166,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(21, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID:";
-            // 
-            // dgvclientes
-            // 
-            this.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvclientes.Location = new System.Drawing.Point(326, 28);
-            this.dgvclientes.Name = "dgvclientes";
-            this.dgvclientes.Size = new System.Drawing.Size(462, 398);
-            this.dgvclientes.TabIndex = 1;
+            this.label1.Text = "Id:";
             // 
             // Seleccionar
             // 
@@ -186,13 +179,21 @@
             this.Seleccionar.TabIndex = 2;
             this.Seleccionar.Text = "Seleccionar Registro para Modificar o Eliminar";
             // 
+            // dgvclientes
+            // 
+            this.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvclientes.Location = new System.Drawing.Point(317, 31);
+            this.dgvclientes.Name = "dgvclientes";
+            this.dgvclientes.Size = new System.Drawing.Size(471, 384);
+            this.dgvclientes.TabIndex = 3;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Seleccionar);
             this.Controls.Add(this.dgvclientes);
+            this.Controls.Add(this.Seleccionar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormClientes";
             this.Text = "FormClientes";
@@ -207,8 +208,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtapmaterno;
-        private System.Windows.Forms.TextBox txtappaterno;
+        private System.Windows.Forms.TextBox txttelefono;
+        private System.Windows.Forms.TextBox txtapellidos;
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label4;
@@ -219,7 +220,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dgvclientes;
         private System.Windows.Forms.Label Seleccionar;
+        private System.Windows.Forms.DataGridView dgvclientes;
     }
 }
