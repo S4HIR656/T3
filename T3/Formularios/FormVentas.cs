@@ -196,7 +196,7 @@ namespace T3.Formularios
             {
                 list_Productos.Items.RemoveAt(list_Productos.SelectedIndex);
 
-                // Recalcular total
+               
                 double total = 0;
                 foreach (var item in list_Productos.Items)
                 {
@@ -208,6 +208,11 @@ namespace T3.Formularios
 
                 lbltventa.Text = $"Total: S/{total:F2}";
             }
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 
