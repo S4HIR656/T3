@@ -14,17 +14,25 @@ namespace T3.Formularios
 {
     public partial class FormProductos : Form
     {
-        public ArbolProducto arbol = new ArbolProducto();
-        public FormProductos()
+        private ArbolProducto arbol; // variable privada
+
+        public FormProductos(ArbolProducto arbolExistente)
         {
             InitializeComponent();
+            arbol = arbolExistente; // asignamos el árbol global
         }
         private void FormProductos_Load(object sender, EventArgs e)
         {
-            dgvproducto.Columns.Add("Id", "ID");
-            dgvproducto.Columns.Add("Nombre", "Nombre");
-            dgvproducto.Columns.Add("Precio", "Precio");
-            dgvproducto.Columns.Add("Stock", "Stock");
+            if (dgvproducto.Columns.Count == 0)
+            {
+                dgvproducto.Columns.Add("Id", "ID");
+                dgvproducto.Columns.Add("Nombre", "Nombre");
+                dgvproducto.Columns.Add("Precio", "Precio");
+                dgvproducto.Columns.Add("Cantidad", "Cantidad");
+            }
+
+            dgvproducto.Rows.Clear();
+            arbol.Llenar(arbol.raiz, dgvproducto); 
         }
         private void button1_Click(object sender, EventArgs e)
         {

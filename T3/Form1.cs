@@ -1,4 +1,5 @@
 ﻿using Clases;
+using Clases.Clientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using T3.Formularios;
 
 namespace T3
 {
     public partial class Form1 : Form
     {
-        ArbolProducto arbol = new ArbolProducto();
+        public static ArbolClientes arbolGlobalClientes = new ArbolClientes();
+        public static ArbolProducto arbolGlobalProductos = new ArbolProducto();
         public Form1()
         {
             InitializeComponent();
@@ -25,18 +28,18 @@ namespace T3
         }
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            Formularios.FormClientes objetoFormClientes= new Formularios.FormClientes();
-            objetoFormClientes.ShowDialog();
+            FormClientes fc = new FormClientes(Form1.arbolGlobalClientes);
+            fc.ShowDialog(); 
         }
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
-            Formularios.FormProductos objetoFormProducto=new Formularios.FormProductos();
+            FormProductos objetoFormProducto = new FormProductos(Form1.arbolGlobalProductos);
             objetoFormProducto.ShowDialog();
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
-            Formularios.FormBuscarComprobante objetoFormBuscarComprobante = new Formularios.FormBuscarComprobante();
+            FormBuscarComprobante objetoFormBuscarComprobante = new FormBuscarComprobante(arbolGlobalProductos);
             objetoFormBuscarComprobante.ShowDialog();
         }
 

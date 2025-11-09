@@ -14,6 +14,7 @@ namespace T3.Formularios
 {
     public partial class FormVentas : Form
     {
+        public static ArbolClientes arbolGlobal = new ArbolClientes();
         public FormVentas()
         {
             InitializeComponent();

@@ -14,17 +14,25 @@ namespace T3.Formularios
 {
     public partial class FormClientes : Form
     {
-        public ArbolClientes arbol = new ArbolClientes();
-        public FormClientes()
+        private ArbolClientes arbol;
+
+        public FormClientes(ArbolClientes arbolExistente)
         {
             InitializeComponent();
+            arbol = arbolExistente;
         }
         private void FormClientes_Load(object sender, EventArgs e)
         {
+            if (dgvclientes.Columns.Count == 0)
+            {
                 dgvclientes.Columns.Add("Id", "ID");
                 dgvclientes.Columns.Add("Nombres", "Nombres");
                 dgvclientes.Columns.Add("Apellido", "Apellido");
                 dgvclientes.Columns.Add("Telefono", "Teléfono");
+            }
+
+            dgvclientes.Rows.Clear();
+            arbol.Llenar(arbol.raiz, dgvclientes); // carga los clientes existente
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
