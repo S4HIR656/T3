@@ -48,6 +48,8 @@ namespace Clases.Clientes
                 InsertarRec(raiz, nuevo);
             }
         }
+
+        // es este
         public void Llenar(NodoCliente nodo, DataGridView dgv)
         {
             if (nodo != null)
@@ -57,7 +59,7 @@ namespace Clases.Clientes
                 Llenar(nodo.derecha, dgv);
             }
         }
-       
+
         public NodoCliente Buscando(int id)
         {
             return Buscar(raiz, id);

@@ -14,31 +14,67 @@ namespace T3.Formularios
 {
     public partial class FormVentas : Form
     {
-        public static ArbolClientes arbolGlobal = new ArbolClientes();
-        public FormVentas()
+        private ArbolClientes arbolClientes;
+        private ArbolProducto arbolProductos;
+
+        private cliente clienteSeleccionado = null;
+        private Producto productoSeleccionado = null;
+        public FormVentas(ArbolClientes clientes, ArbolProducto productos)
         {
             InitializeComponent();
-            txtidcliente.ReadOnly = true;
-            txtnombrecliente.ReadOnly = true;
-            txtappaterno.ReadOnly = true;
-            txtapmaterno.ReadOnly = true;
-
-            txtidproducto.ReadOnly = true;
-            txtnombreproducto.ReadOnly = true;
-            txtprecio.ReadOnly = true;
-            txtstock.ReadOnly = true;
-            txtprecio.ReadOnly = true;
-
-
+            arbolClientes = clientes;    
+            arbolProductos = productos;
         }
+
+        private void FormVentas_Load(object sender, EventArgs e)
+        {
+            
+            if (dgvcliente.Columns.Count == 0)
+            {
+                dgvcliente.Columns.Add("Id", "ID");
+                dgvcliente.Columns.Add("Nombre", "Nombre");
+                dgvcliente.Columns.Add("Apellido", "Apellido");
+                dgvcliente.Columns.Add("Telefono", "Teléfono");
+            }
+
+          
+            if (dgvproductos.Columns.Count == 0)
+            {
+                dgvproductos.Columns.Add("Id", "ID");
+                dgvproductos.Columns.Add("Nombre", "Nombre");
+                dgvproductos.Columns.Add("Precio", "Precio");
+                dgvproductos.Columns.Add("Stock", "Stock");
+            }
+
+           
+           
+
+          
+            dgvcliente.Rows.Clear();
+            dgvproductos.Rows.Clear();
+
+           
+            arbolClientes.Llenar(arbolClientes.raiz, dgvcliente);
+            arbolProductos.Llenar(arbolProductos.raiz, dgvproductos);
+        }
+
         private void dgvcliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                txtidcliente.Text = dgvcliente.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtnombrecliente.Text = dgvcliente.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtappaterno.Text = dgvcliente.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtapmaterno.Text = dgvcliente.Rows[e.RowIndex].Cells[3].Value.ToString();
+                DataGridViewRow fila = dgvcliente.Rows[e.RowIndex];
+                int idCliente = int.Parse(fila.Cells["Id"].Value.ToString());
+
+                
+                clienteSeleccionado = arbolClientes.Buscando(idCliente)?.dato;
+
+                if (clienteSeleccionado != null)
+                {
+                    txtidcliente.Text = clienteSeleccionado.Id.ToString();
+                    txtnombrecliente.Text = clienteSeleccionado.Nombre;
+                    txtappaterno.Text = clienteSeleccionado.Apellido;
+                    txttelefono.Text = clienteSeleccionado.Telefono;
+                }
             }
         }
 
@@ -47,32 +83,38 @@ namespace T3.Formularios
         {
             if (e.RowIndex >= 0)
             {
-                txtidproducto.Text = dgvproductos.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtnombreproducto.Text = dgvproductos.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtprecio.Text = dgvproductos.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtstock.Text = dgvproductos.Rows[e.RowIndex].Cells[3].Value.ToString();
+                DataGridViewRow fila = dgvproductos.Rows[e.RowIndex];
+                int idProducto = int.Parse(fila.Cells["Id"].Value.ToString());
+
+               
+                productoSeleccionado = arbolProductos.Buscar(idProducto)?.Dato;
+
+                if (productoSeleccionado != null)
+                {
+                    txtidproducto.Text = productoSeleccionado.Id.ToString();
+                    txtnombreproducto.Text = productoSeleccionado.Nombre;
+                    txtprecio.Text = productoSeleccionado.Precio.ToString("F2");
+                    txtstock.Text = productoSeleccionado.Stock.ToString();
+                }
             }
         }
 
         
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtidproducto.Text) || string.IsNullOrWhiteSpace(txtcantidadventa.Text))
+            if (clienteSeleccionado == null || productoSeleccionado == null)
             {
-                MessageBox.Show("Seleccione un producto e ingrese la cantidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un cliente y un producto antes de agregar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+
             try
             {
-                int cantidad = int.Parse(txtcantidadventa.Text);
+              
                 double precio = double.Parse(txtprecio.Text);
                 string nombre = txtnombreproducto.Text;
-
-                double subtotal = cantidad * precio;
-
-                dgvresumendeventa.Rows.Add(txtidproducto.Text, nombre, cantidad, precio, subtotal);
-
+                
                 CalcularTotalPagar();
             }
             catch
@@ -86,53 +128,87 @@ namespace T3.Formularios
         {
             double total = 0;
 
-            foreach (DataGridViewRow fila in dgvresumendeventa.Rows)
-            {
-                if (fila.Cells[4].Value != null)
-                    total += Convert.ToDouble(fila.Cells[4].Value);
-            }
-
-            
-        }
-
-        private void txtbuscarcliente_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        
-        
-
-        private void dgvproductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtidproducto.Text) || string.IsNullOrWhiteSpace(txtcantidadventa.Text))
-            {
-                MessageBox.Show("Seleccione un producto e ingrese la cantidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                int cantidad = int.Parse(txtcantidadventa.Text);
-                double precio = double.Parse(txtprecio.Text);
-                string nombre = txtnombreproducto.Text;
-
-                double subtotal = cantidad * precio;
-
-                dgvresumendeventa.Rows.Add(txtidproducto.Text, nombre, cantidad, precio, subtotal);
-
-                CalcularTotalPagar();
-            }
-            catch
-            {
-                MessageBox.Show("Error al agregar el producto. Verifique los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
         }
 
-        private void dgvcliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+       
 
+        private void dgvresumendeventa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            double total = 0;
+
+            int numeroFactura = new Random().Next(1000, 9999);
+          
+
+            MessageBox.Show($"Factura {numeroFactura} generada. Total: {total:C2}", "Factura", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+           
+          
+            clienteSeleccionado = null;
+            productoSeleccionado = null;
+            txtidcliente.Clear();
+            txtnombrecliente.Clear();
+            txtappaterno.Clear();
+            txtidproducto.Clear();
+            txtnombreproducto.Clear();
+            txtprecio.Clear();
+            txtstock.Clear();
+           
+        }
+
+        private void btnseleccliente_Click(object sender, EventArgs e)
+        {
+            if (clienteSeleccionado != null)
+            {
+              
+                lblCliente.Text = $"{clienteSeleccionado.Nombre} {clienteSeleccionado.Apellido}";
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ningún cliente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnAgreproducto_Click(object sender, EventArgs e)
+        {
+            if (productoSeleccionado != null)
+            {
+              
+                list_Productos.Items.Add($"{productoSeleccionado.Nombre} | Precio: S/{productoSeleccionado.Precio:F2}");
+
+               
+                double total = 0;
+                foreach (var item in list_Productos.Items)
+                {
+                    string texto = item.ToString(); 
+                    int indicePrecio = texto.IndexOf("S/") + 2;
+                    string precioStr = texto.Substring(indicePrecio);
+                    total += double.Parse(precioStr);
+                }
+
+                lbltventa.Text = $"Total: S/{total:F2}";
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (list_Productos.SelectedIndex >= 0)
+            {
+                list_Productos.Items.RemoveAt(list_Productos.SelectedIndex);
+
+                // Recalcular total
+                double total = 0;
+                foreach (var item in list_Productos.Items)
+                {
+                    string texto = item.ToString();
+                    int indicePrecio = texto.IndexOf("S/") + 2;
+                    string precioStr = texto.Substring(indicePrecio);
+                    total += double.Parse(precioStr);
+                }
+
+                lbltventa.Text = $"Total: S/{total:F2}";
+            }
         }
     }
+
 }

@@ -59,7 +59,7 @@ namespace Clases
         }
         public void Modificar(int id, string nuevoNombre, double nuevoPrecio, int nuevoStock)
         {
-            NodoProducto nodo = Buscar(raiz, id);
+            NodoProducto nodo = Buscar(id);
             if (nodo != null)
             {
                 nodo.Dato.Nombre = nuevoNombre;
@@ -72,29 +72,23 @@ namespace Clases
                 MessageBox.Show("No se encontró el producto con ese ID");
             }
         }
-        public NodoProducto Buscando(int id)
+        public NodoProducto Buscar(int id)
         {
-            return Buscar(raiz, id);
+            return BuscarRec(raiz, id); // llama al método privado recursivo
         }
 
-        private NodoProducto Buscar(NodoProducto actual, int id)
+        private NodoProducto BuscarRec(NodoProducto actual, int id)
         {
             if (actual == null)
-            {
                 return null;
-            }
+
             if (id == actual.Dato.Id)
-            {
                 return actual;
-            }
+
             if (id < actual.Dato.Id)
-            {
-                return Buscar(actual.izq, id);
-            }
+                return BuscarRec(actual.izq, id);
             else
-            {
-                return Buscar(actual.izq, id);
-            }
+                return BuscarRec(actual.derecha, id); // <- corregido
         }
         public void eliminar(int id) 
         {

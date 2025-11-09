@@ -23,7 +23,7 @@ namespace T3
         }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Formularios.FormVentas objetoFormVentas= new Formularios.FormVentas();
+            FormVentas objetoFormVentas = new FormVentas(Form1.arbolGlobalClientes, Form1.arbolGlobalProductos);
             objetoFormVentas.ShowDialog();
         }
         private void toolStripMenuItem5_Click(object sender, EventArgs e)

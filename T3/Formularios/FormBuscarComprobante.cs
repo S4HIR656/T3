@@ -35,7 +35,7 @@ namespace T3.Formularios
             {
                 int id = int.Parse(textBusc.Text);
 
-                NodoProducto nodo = arbol.Buscando(id);
+                NodoProducto nodo = arbol.Buscar(id);
 
                 dgbproductos.Rows.Clear();
 
