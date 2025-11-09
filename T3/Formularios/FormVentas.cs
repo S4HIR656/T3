@@ -28,9 +28,9 @@ namespace T3.Formularios
             txtstock.ReadOnly = true;
             txtprecio.ReadOnly = true;
 
-           
+
         }
-        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvcliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -41,7 +41,8 @@ namespace T3.Formularios
             }
         }
 
-        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void dgvproductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -51,41 +52,84 @@ namespace T3.Formularios
                 txtstock.Text = dgvproductos.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
         }
-        private void btnAgregar_Click(object sender, EventArgs e)
+
+        
+        private void btnProductos_Click(object sender, EventArgs e)
         {
-            if (txtidproducto.Text == "" || txtcantidadventa.Text == "")
+            if (string.IsNullOrWhiteSpace(txtidproducto.Text) || string.IsNullOrWhiteSpace(txtcantidadventa.Text))
             {
-                MessageBox.Show("Seleccione un producto e ingrese cantidad");
+                MessageBox.Show("Seleccione un producto e ingrese la cantidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int cantidad = int.Parse(txtcantidadventa.Text);
-            double precio = double.Parse(txtprecio.Text);
-            string nombre = txtnombreproducto.Text;
+            try
+            {
+                int cantidad = int.Parse(txtcantidadventa.Text);
+                double precio = double.Parse(txtprecio.Text);
+                string nombre = txtnombreproducto.Text;
+
+                double subtotal = cantidad * precio;
+
+                dgvresumendeventa.Rows.Add(txtidproducto.Text, nombre, cantidad, precio, subtotal);
+
+                CalcularTotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show("Error al agregar el producto. Verifique los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        private void btnAgregarProducto_Click(object sender, EventArgs e)
-        {
-            if (txtidproducto.Text == "" || txtcantidadventa.Text == "")
-            {
-                MessageBox.Show("Seleccione un producto e ingrese cantidad");
-                return;
-            }
 
-            int cantidad = int.Parse(txtcantidadventa.Text);
-            double precio = double.Parse(txtprecio.Text);
-            string nombre = txtnombreproducto.Text;
+        
+        private void CalcularTotalPagar()
+        {
+            double total = 0;
+
+            foreach (DataGridViewRow fila in dgvresumendeventa.Rows)
+            {
+                if (fila.Cells[4].Value != null)
+                    total += Convert.ToDouble(fila.Cells[4].Value);
+            }
 
             
         }
 
-
-
-
         private void txtbuscarcliente_TextChanged(object sender, EventArgs e)
         {
-           
+            
         }
-        private void groupBox1_Enter(object sender, EventArgs e)
+
+        
+        
+
+        private void dgvproductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtidproducto.Text) || string.IsNullOrWhiteSpace(txtcantidadventa.Text))
+            {
+                MessageBox.Show("Seleccione un producto e ingrese la cantidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                int cantidad = int.Parse(txtcantidadventa.Text);
+                double precio = double.Parse(txtprecio.Text);
+                string nombre = txtnombreproducto.Text;
+
+                double subtotal = cantidad * precio;
+
+                dgvresumendeventa.Rows.Add(txtidproducto.Text, nombre, cantidad, precio, subtotal);
+
+                CalcularTotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show("Error al agregar el producto. Verifique los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void dgvcliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

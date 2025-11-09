@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnagregarproducto = new System.Windows.Forms.Button();
             this.txtcantidadventa = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -70,7 +70,7 @@
             this.totalpagar = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgvresumendeventa = new System.Windows.Forms.DataGridView();
             this.lblultimafactura = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -82,7 +82,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvresumendeventa)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -120,6 +120,7 @@
             this.dgvcliente.RowHeadersWidth = 51;
             this.dgvcliente.Size = new System.Drawing.Size(616, 150);
             this.dgvcliente.TabIndex = 2;
+            this.dgvcliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcliente_CellContentClick);
             // 
             // txtbuscarclientes
             // 
@@ -173,6 +174,7 @@
             this.dgvproductos.RowHeadersWidth = 51;
             this.dgvproductos.Size = new System.Drawing.Size(621, 150);
             this.dgvproductos.TabIndex = 2;
+            this.dgvproductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproductos_CellContentClick);
             // 
             // buscarproducto
             // 
@@ -208,7 +210,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Controls.Add(this.btnagregarproducto);
             this.groupBox6.Controls.Add(this.txtcantidadventa);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.button2);
@@ -224,15 +226,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Precio y Cantidad";
             // 
-            // button3
+            // btnagregarproducto
             // 
-            this.button3.Location = new System.Drawing.Point(8, 62);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(637, 78);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Agregar Producto";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnagregarproducto.Location = new System.Drawing.Point(8, 62);
+            this.btnagregarproducto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnagregarproducto.Name = "btnagregarproducto";
+            this.btnagregarproducto.Size = new System.Drawing.Size(637, 78);
+            this.btnagregarproducto.TabIndex = 6;
+            this.btnagregarproducto.Text = "Agregar Producto";
+            this.btnagregarproducto.UseVisualStyleBackColor = true;
             // 
             // txtcantidadventa
             // 
@@ -478,7 +480,7 @@
             this.groupBox7.Controls.Add(this.totalpagar);
             this.groupBox7.Controls.Add(this.button4);
             this.groupBox7.Controls.Add(this.label17);
-            this.groupBox7.Controls.Add(this.dataGridView3);
+            this.groupBox7.Controls.Add(this.dgvresumendeventa);
             this.groupBox7.Controls.Add(this.lblultimafactura);
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Location = new System.Drawing.Point(16, 464);
@@ -532,15 +534,15 @@
             this.label17.TabIndex = 5;
             this.label17.Text = "Seleccionar para Eliminar";
             // 
-            // dataGridView3
+            // dgvresumendeventa
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(5, 68);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.Size = new System.Drawing.Size(1351, 127);
-            this.dataGridView3.TabIndex = 2;
+            this.dgvresumendeventa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvresumendeventa.Location = new System.Drawing.Point(5, 68);
+            this.dgvresumendeventa.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvresumendeventa.Name = "dgvresumendeventa";
+            this.dgvresumendeventa.RowHeadersWidth = 51;
+            this.dgvresumendeventa.Size = new System.Drawing.Size(1351, 127);
+            this.dgvresumendeventa.TabIndex = 2;
             // 
             // lblultimafactura
             // 
@@ -592,7 +594,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvresumendeventa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -629,7 +631,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnagregarproducto;
         private System.Windows.Forms.TextBox txtcantidadventa;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button2;
@@ -639,7 +641,7 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dgvresumendeventa;
         private System.Windows.Forms.Label lblultimafactura;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label totalpagar;
