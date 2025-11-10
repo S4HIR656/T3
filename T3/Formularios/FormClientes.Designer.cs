@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
@@ -50,7 +49,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.IndianRed;
-            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnguardar);
@@ -65,28 +63,18 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(16, 38);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(399, 473);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(43, 388);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(276, 50);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Limpiar Campos";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(43, 334);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(43, 383);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(276, 47);
             this.button3.TabIndex = 10;
@@ -96,8 +84,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(43, 282);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(43, 306);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(276, 44);
             this.button2.TabIndex = 9;
@@ -108,7 +96,7 @@
             // btnguardar
             // 
             this.btnguardar.Location = new System.Drawing.Point(43, 228);
-            this.btnguardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnguardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(276, 47);
             this.btnguardar.TabIndex = 8;
@@ -119,7 +107,7 @@
             // txttelefono
             // 
             this.txttelefono.Location = new System.Drawing.Point(185, 166);
-            this.txttelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(132, 24);
             this.txttelefono.TabIndex = 7;
@@ -127,7 +115,7 @@
             // txtapellidos
             // 
             this.txtapellidos.Location = new System.Drawing.Point(185, 122);
-            this.txtapellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtapellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txtapellidos.Name = "txtapellidos";
             this.txtapellidos.Size = new System.Drawing.Size(132, 24);
             this.txtapellidos.TabIndex = 6;
@@ -135,7 +123,7 @@
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(185, 73);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(132, 24);
             this.txtnombre.TabIndex = 5;
@@ -143,7 +131,7 @@
             // txtid
             // 
             this.txtid.Location = new System.Drawing.Point(185, 37);
-            this.txtid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtid.Margin = new System.Windows.Forms.Padding(4);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(132, 24);
             this.txtid.TabIndex = 4;
@@ -209,7 +197,7 @@
             this.dgvclientes.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvclientes.Location = new System.Drawing.Point(423, 38);
-            this.dgvclientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvclientes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvclientes.Name = "dgvclientes";
             this.dgvclientes.RowHeadersWidth = 51;
             this.dgvclientes.Size = new System.Drawing.Size(628, 473);
@@ -224,7 +212,7 @@
             this.Controls.Add(this.dgvclientes);
             this.Controls.Add(this.Seleccionar);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormClientes";
@@ -248,7 +236,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnguardar;
