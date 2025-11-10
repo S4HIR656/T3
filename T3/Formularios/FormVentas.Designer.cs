@@ -80,16 +80,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.LightCoral;
+            this.groupBox1.BackColor = System.Drawing.Color.RosyBrown;
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dgvcliente);
             this.groupBox1.Controls.Add(this.txtbuscarclientes);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(648, 224);
+            this.groupBox1.Size = new System.Drawing.Size(635, 211);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Clientes Disponibles";
@@ -106,12 +106,14 @@
             // 
             // dgvcliente
             // 
+            this.dgvcliente.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvcliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvcliente.Location = new System.Drawing.Point(16, 66);
+            this.dgvcliente.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvcliente.Location = new System.Drawing.Point(11, 67);
             this.dgvcliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvcliente.Name = "dgvcliente";
             this.dgvcliente.RowHeadersWidth = 51;
-            this.dgvcliente.Size = new System.Drawing.Size(616, 150);
+            this.dgvcliente.Size = new System.Drawing.Size(616, 137);
             this.dgvcliente.TabIndex = 2;
             this.dgvcliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcliente_CellClick);
             this.dgvcliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcliente_CellContentClick);
@@ -128,6 +130,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(16, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -137,16 +140,17 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.LightCoral;
+            this.groupBox2.BackColor = System.Drawing.Color.RosyBrown;
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dgvproductos);
             this.groupBox2.Controls.Add(this.buscarproducto);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(727, 0);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(727, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(645, 224);
+            this.groupBox2.Size = new System.Drawing.Size(645, 216);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Productos Disponibles";
@@ -163,12 +167,13 @@
             // 
             // dgvproductos
             // 
+            this.dgvproductos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvproductos.Location = new System.Drawing.Point(16, 66);
+            this.dgvproductos.Location = new System.Drawing.Point(8, 64);
             this.dgvproductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvproductos.Name = "dgvproductos";
             this.dgvproductos.RowHeadersWidth = 51;
-            this.dgvproductos.Size = new System.Drawing.Size(621, 150);
+            this.dgvproductos.Size = new System.Drawing.Size(621, 144);
             this.dgvproductos.TabIndex = 2;
             this.dgvproductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproductos_CellClick);
             // 
@@ -193,6 +198,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.RosyBrown;
             this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.groupBox4);
@@ -200,14 +206,14 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(1361, 453);
+            this.groupBox3.Size = new System.Drawing.Size(1354, 453);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Resumen de seleccion";
             // 
             // groupBox6
             // 
-            this.groupBox6.BackColor = System.Drawing.Color.LightCoral;
+            this.groupBox6.BackColor = System.Drawing.Color.RosyBrown;
             this.groupBox6.Controls.Add(this.btnGcomprobante);
             this.groupBox6.Controls.Add(this.lbltventa);
             this.groupBox6.Controls.Add(this.btnEliminar);
@@ -219,27 +225,28 @@
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox6.Size = new System.Drawing.Size(760, 446);
+            this.groupBox6.Size = new System.Drawing.Size(760, 453);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Resumen Cliente";
             // 
             // btnGcomprobante
             // 
-            this.btnGcomprobante.Location = new System.Drawing.Point(523, 416);
+            this.btnGcomprobante.BackColor = System.Drawing.Color.IndianRed;
+            this.btnGcomprobante.Location = new System.Drawing.Point(566, 418);
             this.btnGcomprobante.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGcomprobante.Name = "btnGcomprobante";
             this.btnGcomprobante.Size = new System.Drawing.Size(165, 27);
             this.btnGcomprobante.TabIndex = 16;
             this.btnGcomprobante.Text = "Generar comprobante";
-            this.btnGcomprobante.UseVisualStyleBackColor = true;
+            this.btnGcomprobante.UseVisualStyleBackColor = false;
             this.btnGcomprobante.Click += new System.EventHandler(this.btnGcomprobante_Click);
             // 
             // lbltventa
             // 
             this.lbltventa.AutoSize = true;
             this.lbltventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltventa.Location = new System.Drawing.Point(581, 393);
+            this.lbltventa.Location = new System.Drawing.Point(566, 392);
             this.lbltventa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltventa.Name = "lbltventa";
             this.lbltventa.Size = new System.Drawing.Size(56, 20);
@@ -248,18 +255,20 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.IndianRed;
             this.btnEliminar.Location = new System.Drawing.Point(695, 48);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.TabIndex = 14;
             this.btnEliminar.Text = "X";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(339, 23);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -272,15 +281,16 @@
             // 
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(57, 76);
+            this.lblCliente.Location = new System.Drawing.Point(96, 76);
             this.lblCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(27, 20);
+            this.lblCliente.Size = new System.Drawing.Size(63, 20);
             this.lblCliente.TabIndex = 12;
-            this.lblCliente.Text = "---";
+            this.lblCliente.Text = "---------";
             // 
             // list_Productos
             // 
+            this.list_Productos.BackColor = System.Drawing.Color.Gainsboro;
             this.list_Productos.FormattingEnabled = true;
             this.list_Productos.ItemHeight = 16;
             this.list_Productos.Location = new System.Drawing.Point(343, 48);
@@ -292,6 +302,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(96, 23);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -322,13 +333,14 @@
             // 
             // btnAgreproducto
             // 
+            this.btnAgreproducto.BackColor = System.Drawing.Color.IndianRed;
             this.btnAgreproducto.Location = new System.Drawing.Point(124, 151);
             this.btnAgreproducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgreproducto.Name = "btnAgreproducto";
             this.btnAgreproducto.Size = new System.Drawing.Size(132, 32);
             this.btnAgreproducto.TabIndex = 12;
             this.btnAgreproducto.Text = "Agregar";
-            this.btnAgreproducto.UseVisualStyleBackColor = true;
+            this.btnAgreproducto.UseVisualStyleBackColor = false;
             this.btnAgreproducto.Click += new System.EventHandler(this.btnAgreproducto_Click);
             // 
             // txtstock
@@ -366,7 +378,8 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 119);
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(13, 125);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 16);
@@ -376,6 +389,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(8, 91);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
@@ -386,6 +400,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(8, 62);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
@@ -396,6 +411,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(8, 30);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
@@ -433,13 +449,14 @@
             // 
             // btnseleccliente
             // 
+            this.btnseleccliente.BackColor = System.Drawing.Color.IndianRed;
             this.btnseleccliente.Location = new System.Drawing.Point(124, 149);
             this.btnseleccliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnseleccliente.Name = "btnseleccliente";
             this.btnseleccliente.Size = new System.Drawing.Size(132, 32);
             this.btnseleccliente.TabIndex = 11;
             this.btnseleccliente.Text = "Seleccionar";
-            this.btnseleccliente.UseVisualStyleBackColor = true;
+            this.btnseleccliente.UseVisualStyleBackColor = false;
             this.btnseleccliente.Click += new System.EventHandler(this.btnseleccliente_Click);
             // 
             // txtidcliente
@@ -470,7 +487,8 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(-3, 123);
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(0, 125);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 16);
@@ -480,6 +498,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 91);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
@@ -490,6 +509,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(0, 57);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
@@ -500,6 +520,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, 25);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";

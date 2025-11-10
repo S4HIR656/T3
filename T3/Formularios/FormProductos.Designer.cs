@@ -49,23 +49,29 @@
             // Seleccionar
             // 
             this.Seleccionar.AutoSize = true;
-            this.Seleccionar.Location = new System.Drawing.Point(565, 18);
+            this.Seleccionar.BackColor = System.Drawing.Color.MistyRose;
+            this.Seleccionar.Location = new System.Drawing.Point(753, 22);
+            this.Seleccionar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Size = new System.Drawing.Size(223, 13);
+            this.Seleccionar.Size = new System.Drawing.Size(284, 16);
             this.Seleccionar.TabIndex = 5;
             this.Seleccionar.Text = "Seleccionar Registro para Modificar o Eliminar";
             // 
             // dgvproducto
             // 
+            this.dgvproducto.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dgvproducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvproducto.Location = new System.Drawing.Point(326, 34);
+            this.dgvproducto.Location = new System.Drawing.Point(423, 42);
+            this.dgvproducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvproducto.Name = "dgvproducto";
-            this.dgvproducto.Size = new System.Drawing.Size(462, 398);
+            this.dgvproducto.RowHeadersWidth = 51;
+            this.dgvproducto.Size = new System.Drawing.Size(614, 476);
             this.dgvproducto.TabIndex = 4;
             this.dgvproducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproducto_CellClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.IndianRed;
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
@@ -77,19 +83,23 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(12, 18);
+            this.groupBox1.Location = new System.Drawing.Point(16, 42);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(299, 403);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(399, 476);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Producto";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(32, 295);
+            this.button3.Location = new System.Drawing.Point(43, 363);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(207, 38);
+            this.button3.Size = new System.Drawing.Size(276, 47);
             this.button3.TabIndex = 10;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
@@ -97,9 +107,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(32, 253);
+            this.button2.Location = new System.Drawing.Point(43, 311);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 36);
+            this.button2.Size = new System.Drawing.Size(276, 44);
             this.button2.TabIndex = 9;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
@@ -107,9 +118,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(32, 209);
+            this.button1.Location = new System.Drawing.Point(43, 257);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 38);
+            this.button1.Size = new System.Drawing.Size(276, 47);
             this.button1.TabIndex = 8;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
@@ -117,76 +129,89 @@
             // 
             // txtstock
             // 
-            this.txtstock.Location = new System.Drawing.Point(139, 142);
+            this.txtstock.Location = new System.Drawing.Point(185, 175);
+            this.txtstock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtstock.Name = "txtstock";
-            this.txtstock.Size = new System.Drawing.Size(100, 20);
+            this.txtstock.Size = new System.Drawing.Size(132, 24);
             this.txtstock.TabIndex = 7;
             // 
             // txtprecio
             // 
-            this.txtprecio.Location = new System.Drawing.Point(139, 99);
+            this.txtprecio.Location = new System.Drawing.Point(185, 122);
+            this.txtprecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(100, 20);
+            this.txtprecio.Size = new System.Drawing.Size(132, 24);
             this.txtprecio.TabIndex = 6;
             // 
             // txtnombreproducto
             // 
-            this.txtnombreproducto.Location = new System.Drawing.Point(139, 59);
+            this.txtnombreproducto.Location = new System.Drawing.Point(185, 78);
+            this.txtnombreproducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtnombreproducto.Name = "txtnombreproducto";
-            this.txtnombreproducto.Size = new System.Drawing.Size(100, 20);
+            this.txtnombreproducto.Size = new System.Drawing.Size(132, 24);
             this.txtnombreproducto.TabIndex = 5;
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(139, 30);
+            this.txtid.Location = new System.Drawing.Point(185, 37);
+            this.txtid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(100, 20);
+            this.txtid.Size = new System.Drawing.Size(132, 24);
             this.txtid.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 145);
+            this.label4.BackColor = System.Drawing.Color.MistyRose;
+            this.label4.Location = new System.Drawing.Point(28, 178);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Storck:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 106);
+            this.label3.BackColor = System.Drawing.Color.MistyRose;
+            this.label3.Location = new System.Drawing.Point(28, 130);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(51, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Precio";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 66);
+            this.label2.BackColor = System.Drawing.Color.MistyRose;
+            this.label2.Location = new System.Drawing.Point(28, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(66, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 37);
+            this.label1.BackColor = System.Drawing.Color.MistyRose;
+            this.label1.Location = new System.Drawing.Point(28, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.Size = new System.Drawing.Size(26, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
             // FormProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.Seleccionar);
             this.Controls.Add(this.dgvproducto);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormProductos";
