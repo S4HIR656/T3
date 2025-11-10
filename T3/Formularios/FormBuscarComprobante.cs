@@ -64,5 +64,7 @@ namespace T3.Formularios
                 lbltotal.Text = "Total: S/0.00";
             }
         }
+
+        
     }
 }
