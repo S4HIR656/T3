@@ -69,7 +69,7 @@
             this.groupBox1.Size = new System.Drawing.Size(612, 368);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ingresar ID del producto:";
+            this.groupBox1.Text = "Ingresar DNI del cliente:";
             // 
             // listProductos
             // 

@@ -173,6 +173,7 @@ namespace T3.Formularios
 
         private void btnAgreproducto_Click(object sender, EventArgs e)
         {
+
             if (productoSeleccionado != null)
             {
                 // Agrega el producto al ListBox
@@ -364,16 +365,6 @@ namespace T3.Formularios
 
                 FiltrarProductos(nodo.derecha, filtro);
             }
-        }
-
-        private void txtidcliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvcliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 
