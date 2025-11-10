@@ -173,8 +173,22 @@ namespace T3.Formularios
 
         private void btnAgreproducto_Click(object sender, EventArgs e)
         {
+            
             if (productoSeleccionado != null)
             {
+
+                int cantidadExistente = 0; //para las veces que un producto a sido agregado
+                for (int i = 0; i < list_Productos.Items.Count; i++) //contar el stock de los elementos guardados
+                {
+                    if (list_Productos.Items[i].ToString().StartsWith(productoSeleccionado.Nombre))
+                        cantidadExistente++;// suma si ya esta en la lista
+                }
+
+                if (cantidadExistente >= productoSeleccionado.Stock) //la cantidad agragada es mayor o = 
+                {
+                    MessageBox.Show("No hay más stock disponible para este producto.", "Stock agotado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 // Agrega el producto al ListBox
                 list_Productos.Items.Add($"{productoSeleccionado.Nombre} | Precio: S/{productoSeleccionado.Precio:F2}");
 
@@ -197,6 +211,7 @@ namespace T3.Formularios
 
                 // Opcional: deseleccionar el producto
                 productoSeleccionado = null;
+
             }
             else
             {
@@ -364,16 +379,6 @@ namespace T3.Formularios
 
                 FiltrarProductos(nodo.derecha, filtro);
             }
-        }
-
-        private void txtidcliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvcliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 

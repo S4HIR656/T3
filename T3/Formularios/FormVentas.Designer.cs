@@ -116,7 +116,6 @@
             this.dgvcliente.Size = new System.Drawing.Size(616, 137);
             this.dgvcliente.TabIndex = 2;
             this.dgvcliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcliente_CellClick);
-            this.dgvcliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcliente_CellContentClick);
             // 
             // txtbuscarclientes
             // 
@@ -466,7 +465,6 @@
             this.txtidcliente.Name = "txtidcliente";
             this.txtidcliente.Size = new System.Drawing.Size(172, 22);
             this.txtidcliente.TabIndex = 5;
-            this.txtidcliente.TextChanged += new System.EventHandler(this.txtidcliente_TextChanged);
             // 
             // txtappaterno
             // 
