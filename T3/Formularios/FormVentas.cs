@@ -14,13 +14,13 @@ namespace T3.Formularios
 {
     public partial class FormVentas : Form
     {
-        private ArbolClientes arbolClientes;
-        private ArbolProducto arbolProductos;
+        public ArbolClientes arbolClientes;
+        public ArbolProducto arbolProductos;
         public static ListaComprobantes listaComprobantes = new ListaComprobantes();
-        private cliente clienteSeleccionado = null;
-        private Producto productoSeleccionado = null;
-        private int numeroFacturaSecuencial = 1; 
-        private Random rnd = new Random();
+        public cliente clienteSeleccionado = null;
+        public Producto productoSeleccionado = null;
+        public int numeroFacturaSecuencial = 1;
+        public Random rnd = new Random();
         public FormVentas(ArbolClientes clientes, ArbolProducto productos)
         {
             InitializeComponent();
