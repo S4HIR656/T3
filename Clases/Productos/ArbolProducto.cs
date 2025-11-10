@@ -74,7 +74,7 @@ namespace Clases
         }
         public NodoProducto Buscar(int id)
         {
-            return BuscarRec(raiz, id); // llama al método privado recursivo
+            return BuscarRec(raiz, id); 
         }
 
         private NodoProducto BuscarRec(NodoProducto actual, int id)
@@ -88,7 +88,7 @@ namespace Clases
             if (id < actual.Dato.Id)
                 return BuscarRec(actual.izq, id);
             else
-                return BuscarRec(actual.derecha, id); // <- corregido
+                return BuscarRec(actual.derecha, id); 
         }
         public void eliminar(int id) 
         {

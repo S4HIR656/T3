@@ -14,7 +14,7 @@ namespace Clases
         public string ApellidoCliente;
         public string TelefonoCliente;
         public string Fecha;
-        public string Productos; // productos separados por ";"
+        public string Productos; 
         public double Total;
 
         public Comprobante(string numero, string idCliente, string nombre, string apellido, string telefono, string fecha, string productos, double total)
