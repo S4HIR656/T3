@@ -1,24 +1,25 @@
-﻿using Clases;
-using Clases.Clientes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using Clases;
+using Clases.Clientes;
 
 namespace T3.Formularios
 {
     public partial class FormBuscarComprobante : Form
     {
         private ArbolProducto arbol;
-        public FormBuscarComprobante(ArbolProducto arbolExistente)
+        private ArbolClientes clientes;
+
+        public FormBuscarComprobante()
+        {
+            InitializeComponent();
+        }
+
+        public FormBuscarComprobante(ArbolProducto arbolExistente, ArbolClientes arbolc)
         {
             InitializeComponent();
             arbol = arbolExistente;
+            clientes = arbolc;
         }
 
         private void BtBuscar_Click(object sender, EventArgs e)
@@ -60,6 +61,7 @@ namespace T3.Formularios
                 lblappaterno.Text = "";
                 lblTelefono.Text = "";
                 listProductos.Items.Clear();
+                lbltotal.Text = "Total: S/0.00";
             }
         }
     }

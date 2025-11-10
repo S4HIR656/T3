@@ -129,8 +129,6 @@ namespace T3.Formularios
         private void CalcularTotalPagar()
         {
             double total = 0;
-
-
         }
 
        
@@ -228,7 +226,7 @@ namespace T3.Formularios
 
         private void btnGcomprobante_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"ID Cliente: {txtidcliente.Text}");
+           
 
             if (string.IsNullOrEmpty(lblCliente.Text))
             {

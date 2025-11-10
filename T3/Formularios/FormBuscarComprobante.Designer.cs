@@ -225,7 +225,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormBuscarComprobante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormBuscarComprobante";
+            this.Text = "Buscar Comprobante";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -254,5 +254,5 @@
         private System.Windows.Forms.Label lblappaterno;
         private System.Windows.Forms.Label lblnombres;
         private System.Windows.Forms.ListBox listProductos;
+         }
     }
-}
