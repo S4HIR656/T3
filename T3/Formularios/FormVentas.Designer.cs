@@ -80,6 +80,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightCoral;
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dgvcliente);
             this.groupBox1.Controls.Add(this.txtbuscarclientes);
