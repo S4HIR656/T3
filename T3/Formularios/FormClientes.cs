@@ -59,7 +59,7 @@ namespace T3.Formularios
                 txttelefono.Clear();
                 txtid.Focus();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Error: Verifique que todos los datos sean correctos.");
             }
@@ -118,7 +118,7 @@ namespace T3.Formularios
                 txtapellidos.Clear();
                 txttelefono.Clear();
             }
-            catch (Exception ex)
+            catch 
             {   
                 MessageBox.Show("Error al eliminar cliente: Verifique el ID");
             }
