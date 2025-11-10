@@ -130,8 +130,6 @@ namespace T3.Formularios
             {
                 lblCliente.Text = $"{clienteSeleccionado.Nombre} {clienteSeleccionado.Apellido}";
 
-                // NO limpiar txtidcliente ni deseleccionar el cliente aún
-                // Se hará después de generar el comprobante
             }
             else
             {
