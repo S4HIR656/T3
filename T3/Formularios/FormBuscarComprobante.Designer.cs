@@ -178,18 +178,18 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(397, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
+            this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Apellido Materno:";
+            this.label5.Text = "Telefono: ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(193, 38);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 13);
+            this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Apellido Paterno:";
+            this.label7.Text = "Apellidos:";
             // 
             // label6
             // 

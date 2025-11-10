@@ -39,7 +39,7 @@ namespace T3
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
-            FormBuscarComprobante objetoFormBuscarComprobante = new FormBuscarComprobante(arbolGlobalProductos);
+            FormBuscarComprobante objetoFormBuscarComprobante = new FormBuscarComprobante(arbolGlobalProductos, arbolGlobalClientes);
             objetoFormBuscarComprobante.ShowDialog();
         }
 

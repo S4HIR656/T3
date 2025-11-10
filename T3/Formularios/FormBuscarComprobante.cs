@@ -15,10 +15,12 @@ namespace T3.Formularios
     public partial class FormBuscarComprobante : Form
     {
         private ArbolProducto arbol;
-        public FormBuscarComprobante(ArbolProducto arbolExistente)
+        private ArbolClientes clientes;
+        public FormBuscarComprobante(ArbolProducto arbolExistente, ArbolClientes arbolc)
         {
             InitializeComponent();
             arbol = arbolExistente;
+            clientes = arbolc;
         }
 
         private void FormBuscarComprobante_Load(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace T3.Formularios
                 int id = int.Parse(textBusc.Text);
 
                 NodoProducto nodo = arbol.Buscar(id);
+                NodoCliente nodoCliente = clientes.Buscando(id);
 
                 dgbproductos.Rows.Clear();
 
@@ -49,10 +52,20 @@ namespace T3.Formularios
                     );
 
                     lblnumerofactura.Text = nodo.Dato.Id.ToString();
-                    lblnombres.Text = nodo.Dato.Nombre;
-                    lblappaterno.Text = nodo.Dato.Nombre.ToString();
-                    lblapmaterno.Text = nodo.Dato.Nombre.ToString();
 
+
+                    if (nodoCliente != null)
+                    {
+                        lblnombres.Text = nodoCliente.dato.Nombre;
+                        lblappaterno.Text = nodoCliente.dato.Apellido;
+                        lblapmaterno.Text = nodoCliente.dato.Telefono; 
+                    }
+                    else
+                    {
+                        lblnombres.Text = "---";
+                        lblappaterno.Text = "---";
+                        lblapmaterno.Text = "---";
+                    }
 
                     MessageBox.Show("Producto encontrado");
                 }
