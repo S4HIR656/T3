@@ -45,6 +45,8 @@
     <Compile Include="Clientes\ArbolClientes.cs" />
     <Compile Include="Clientes\cliente.cs" />
     <Compile Include="Clientes\NodoCliente.cs" />
+    <Compile Include="comprobante.cs" />
+    <Compile Include="nodoComprobante.cs" />
     <Compile Include="Productos\ArbolProducto.cs" />
     <Compile Include="Productos\NodoProducto.cs" />
     <Compile Include="Productos\Producto.cs" />

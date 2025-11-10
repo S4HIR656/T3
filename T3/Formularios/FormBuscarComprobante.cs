@@ -21,52 +21,46 @@ namespace T3.Formularios
             arbol = arbolExistente;
         }
 
-        private void FormBuscarComprobante_Load(object sender, EventArgs e)
+        private void BtBuscar_Click(object sender, EventArgs e)
         {
-            dgbproductos.Columns.Add("Id", "ID");         
-            dgbproductos.Columns.Add("Nombre", "Nombre"); 
-            dgbproductos.Columns.Add("Precio", "Precio");
-            dgbproductos.Columns.Add("Stock", "Stock");   
-        }
+            string idCliente = textBusc.Text.Trim();
 
-        public void BtBuscar_Click(object sender, EventArgs e)
-        {
-            try
+            if (string.IsNullOrEmpty(idCliente))
             {
-                int id = int.Parse(textBusc.Text);
-
-                NodoProducto nodo = arbol.Buscar(id);
-
-                dgbproductos.Rows.Clear();
-
-                if (nodo != null)
-                {
-                    dgbproductos.Rows.Add(
-                        nodo.Dato.Id,      
-                        nodo.Dato.Nombre,  
-                        nodo.Dato.Precio,  
-                        nodo.Dato.Stock    
-                    );
-
-                    lblnumerofactura.Text = nodo.Dato.Id.ToString();
-                    lblnombres.Text = nodo.Dato.Nombre;
-                    lblappaterno.Text = nodo.Dato.Nombre.ToString();
-                    lblapmaterno.Text = nodo.Dato.Nombre.ToString();
-
-
-                    MessageBox.Show("Producto encontrado");
-                }
-                else
-                {
-                    MessageBox.Show("Producto no encontrado");
-                }
+                MessageBox.Show("Ingrese un ID de cliente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch (FormatException)
+
+            Comprobante encontrado = FormVentas.listaComprobantes.BuscarPorCliente(idCliente);
+
+            if (encontrado != null)
             {
-                MessageBox.Show("Error: el número ingresado no es válido. Debe ser un valor numérico.");
-            }
-           
-        }
+                lblnumerofactura.Text = encontrado.NumeroFactura;
+                lblfechaventa.Text = encontrado.Fecha;
+                lblnombres.Text = encontrado.NombreCliente;
+                lblappaterno.Text = encontrado.ApellidoCliente;
+                lblTelefono.Text = encontrado.TelefonoCliente;
 
+                listProductos.Items.Clear();
+                string[] productos = encontrado.Productos.Split(';');
+                foreach (string p in productos)
+                {
+                    if (!string.IsNullOrWhiteSpace(p))
+                        listProductos.Items.Add(p);
+                }
+                lbltotal.Text = $"Total: S/{encontrado.Total:F2}";
+            }
+            else
+            {
+                MessageBox.Show("No se encontró ningún comprobante para este cliente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                lblnumerofactura.Text = "";
+                lblfechaventa.Text = "";
+                lblnombres.Text = "";
+                lblappaterno.Text = "";
+                lblTelefono.Text = "";
+                listProductos.Items.Clear();
+            }
+        }
     }
 }

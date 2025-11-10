@@ -42,11 +42,5 @@ namespace T3
             FormBuscarComprobante objetoFormBuscarComprobante = new FormBuscarComprobante(arbolGlobalProductos);
             objetoFormBuscarComprobante.ShowDialog();
         }
-
-        private void toolStripMenuItem8_Click(object sender, EventArgs e)
-        {
-            Formularios.FormReportePorfechas objetoFormReportePorfechas = new Formularios.FormReportePorfechas();
-            objetoFormReportePorfechas.ShowDialog();
-        }
     }
 }

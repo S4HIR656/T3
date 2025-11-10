@@ -25,7 +25,7 @@ namespace T3.Formularios
         {
             if (dgvclientes.Columns.Count == 0)
             {
-                dgvclientes.Columns.Add("Id", "ID");
+                dgvclientes.Columns.Add("DNI", "DNI");
                 dgvclientes.Columns.Add("Nombres", "Nombres");
                 dgvclientes.Columns.Add("Apellido", "Apellido");
                 dgvclientes.Columns.Add("Telefono", "Teléfono");
@@ -88,7 +88,7 @@ namespace T3.Formularios
             {
                 if (txtid == null)
                 {
-                    MessageBox.Show("Ingrese el ID del cliente que desea eliminar.");
+                    MessageBox.Show("Ingrese el DNI del cliente que desea eliminar.");
                     return;
                 }
 
@@ -97,11 +97,11 @@ namespace T3.Formularios
                 NodoCliente nodo = arbol.Buscando(id);
                 if (nodo == null)
                 {
-                    MessageBox.Show("No se encontró un cliente con ese ID.");
+                    MessageBox.Show("No se encontró un cliente con ese DNI.");
                     return;
                 }
 
-                DialogResult r = MessageBox.Show("¿Desea eliminar al cliente con ID " + id + "?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                DialogResult r = MessageBox.Show("¿Desea eliminar al cliente con DNI " + id + "?", "Confirmar eliminación", MessageBoxButtons.YesNo);
 
                 if (r == DialogResult.Yes)
                 {
@@ -128,7 +128,7 @@ namespace T3.Formularios
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow fila = dgvclientes.Rows[e.RowIndex];
-                txtid.Text = fila.Cells["Id"].Value.ToString();
+                txtid.Text = fila.Cells["DNI"].Value.ToString();
                 txtnombre.Text = fila.Cells["Nombres"].Value.ToString();
                 txtapellidos.Text = fila.Cells["Apellido"].Value.ToString();
                 txttelefono.Text = fila.Cells["Telefono"].Value.ToString();

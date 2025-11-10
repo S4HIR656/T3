@@ -70,12 +70,6 @@
     <Compile Include="Formularios\FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormReportePorfechas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormReportePorfechas.Designer.cs">
-      <DependentUpon>FormReportePorfechas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FormVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,9 +89,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormReportePorfechas.resx">
-      <DependentUpon>FormReportePorfechas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormVentas.resx">
       <DependentUpon>FormVentas.cs</DependentUpon>
