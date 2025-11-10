@@ -101,38 +101,6 @@ namespace T3.Formularios
             }
         }
 
-        
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            if (clienteSeleccionado == null || productoSeleccionado == null)
-            {
-                MessageBox.Show("Seleccione un cliente y un producto antes de agregar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-
-            try
-            {
-              
-                double precio = double.Parse(txtprecio.Text);
-                string nombre = txtnombreproducto.Text;
-                
-                CalcularTotalPagar();
-            }
-            catch
-            {
-                MessageBox.Show("Error al agregar el producto. Verifique los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        
-        private void CalcularTotalPagar()
-        {
-            double total = 0;
-        }
-
-       
-
         private void dgvresumendeventa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             double total = 0;
